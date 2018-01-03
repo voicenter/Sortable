@@ -401,7 +401,12 @@
 			this._prepareDragStart(evt, touch, target, startIndex);
 		},
 
-		_prepareDragStart: function (/** Event */evt, /** Touch */touch, /** HTMLElement */target, /** Number */startIndex) {
+        _prepareDragStart: function (/** Event */evt, /** Touch */touch, /** HTMLElement */target, /** Number */startIndex) {
+            if (target.id == "room-on-focus") {
+                console.log("sortable js attempting to drag focused room. prevent drag!");
+                return false;
+            }
+
 			var _this = this,
 				el = _this.el,
 				options = _this.options,
