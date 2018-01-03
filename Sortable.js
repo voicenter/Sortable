@@ -409,7 +409,7 @@
 
             var el = target;
             while (el.parentNode) {
-                if (el.parentNode.classList.contains("v-carousel-item")) {
+                if (el.parentNode != undefined && el.parentNode.classList != undefined && el.parentNode.classList.contains("v-carousel-item")) {
                     console.log("sortable js attempting to drag carousel room. prevent drag!");
                     return false;
                 } else {
