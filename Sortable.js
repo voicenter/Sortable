@@ -407,6 +407,16 @@
                 return false;
             }
 
+            var el = target;
+            while (el.parentNode) {
+                if (el.parentNode.classList.contains("v-carousel-item")) {
+                    console.log("sortable js attempting to drag carousel room. prevent drag!");
+                    return false;
+                } else {
+                    el = el.parentNode;
+                }
+            }
+
 			var _this = this,
 				el = _this.el,
 				options = _this.options,
